@@ -1,0 +1,208 @@
+/* General body styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Centered container */
+.container {
+    max-width: 800px;
+    margin: 60px auto;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    color: #1b73e8;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: -10px;
+    letter-spacing: 0.3px;
+    font-weight: 400;
+}
+
+/* Search form */
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+input[type="text"] {
+    padding: 10px 15px;
+    width: 70%;
+    border: 2px solid #1b73e8;
+    border-radius: 10px 0 0 10px;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+}
+
+button {
+    padding: 10px 20px;
+    background: #1b73e8;
+    color: #fff;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0b59c8;
+}
+
+/* Results container */
+.results {
+    margin-top: 30px;
+}
+
+/* Section for Good and Moderate links */
+.section {
+    margin-bottom: 25px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Good links section styling with gradient */
+.section.good {
+    border-left: 6px solid #28a745;
+    background: linear-gradient(120deg, #e9f9ee, #d4f4db);
+}
+
+/* Moderate links section styling with gradient */
+.section.moderate {
+    border-left: 6px solid #ff9800;
+    background: linear-gradient(120deg, #fff5e5, #ffe8cc);
+}
+
+/* Section hover effect */
+.section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Section titles */
+.section h2,
+.section h3 {
+    margin-top: 0;
+    color: #222;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+/* Unordered list */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+/* Each link item with slide-in animation */
+li {
+    position: relative;
+    margin: 10px 0;
+    background: #fff;
+    padding: 10px 15px 10px 40px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+    overflow-wrap: break-word;
+    word-break: break-all;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: slideIn 0.5s forwards;
+}
+
+/* Animation keyframes */
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Hover effect for each link item */
+li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Link text with smooth color transition */
+a {
+    color: #1b73e8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0b59c8;
+    text-decoration: underline;
+}
+
+/* Modern bullet styling */
+li::before {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    content: "";
+}
+
+/* Green bullets for good links */
+.section.good li::before {
+    background-color: #28a745;
+}
+
+/* Orange bullets for moderate links */
+.section.moderate li::before {
+    background-color: #ff9800;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    input[type="text"] {
+        width: 60%;
+    }
+
+    button {
+        width: 40%;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}
