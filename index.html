@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Link Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 Smart Link Checker</h1>
+        <p class="subtitle">Find and classify working web links for any topic</p>
+
+        <form method="POST">
+            <input type="text" name="topic" placeholder="Enter a topic..." required value="{{ topic }}">
+            <button type="submit">🔍 Search</button>
+        </form>
+
+        {% if topic %}
+        <div class="results">
+            <h2>Results for: <span class="topic">{{ topic }}</span></h2>
+
+            {% if good_links %}
+                <div class="section good">
+                    <h3>✅ Good Links (Fast & Active)</h3>
+                    <ul>
+                        {% for link in good_links %}
+                            <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+            {% if moderate_links %}
+                <div class="section moderate">
+                    <h3>⚠️ Moderate Links (Working but Slow)</h3>
+                    <ul>
+                        {% for link in moderate_links %}
+                            <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+            {% if not good_links and not moderate_links %}
+                <p class="no-results">No working links found. Try a different topic.</p>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
