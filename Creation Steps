@@ -1,0 +1,5 @@
+Create a folder on project name in VS Code
+Create a templates folder and store html code in it
+Create a static folder and store css code in it
+Then create a file app.py to write the python code
+Run the code in terminal using app.py
